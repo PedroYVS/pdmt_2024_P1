@@ -13,7 +13,7 @@ export default class TarefaLista extends Component {
         const list = [], listAux = this.props.tarefas
         listAux.forEach(element => {
             keysAux++
-            list.push(<div key={keysAux} className='col col-12 m-3 w-50 rounded-pill' style={{backgroundColor: 'white'}}>{element}</div>)
+            list.push(<div key={keysAux} className='col col-12 m-3 w-50 rounded-pill overflow-auto' style={{backgroundColor: 'white'}}>{element}</div>)
         })
         this.keys = keysAux
         this.setState({listaTarefas: list})
