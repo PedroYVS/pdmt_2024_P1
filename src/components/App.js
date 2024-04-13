@@ -4,6 +4,7 @@ import TarefaLista from './TarefaLista'
 import 'bootstrap/dist/css/bootstrap.css'
 
 export default class App extends Component {
+    
     state = {
         tarefas: []
     }
@@ -18,9 +19,7 @@ export default class App extends Component {
     render() {
         return (
         <div className='container text-center'>
-            <TarefaEntrada
-            plholder='Digite a descrição de uma nova tarefa'
-            atualizaTarefas={this.atualizaTarefas}/>
+            <TarefaEntrada atualizaTarefas={this.atualizaTarefas}/>
             {(this.state.tarefas.length !== 0) && <TarefaLista tarefas={this.state.tarefas}/>}
         </div>
         )
