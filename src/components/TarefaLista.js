@@ -14,10 +14,14 @@ export default class TarefaLista extends Component {
         this.listaTarefasAux.push(
             <div
             key={this.keys + 1}
-            className='col col-12 m-3 w-50 rounded-pill overflow-auto'
-            style={{backgroundColor: 'white'}}>
-                {this.props.tarefas[this.keys]}
+            className='row justify-content-center'>
+                <div
+                className='col col-xl-6 col-md-7 col-sm-9 col-11 m-3 rounded-pill overflow-auto'
+                style={{backgroundColor: 'white'}}>
+                    {this.props.tarefas[this.keys]}
+                </div>
             </div>
+            
         )
         this.keys++
         this.setState({listaTarefas: this.listaTarefasAux})
@@ -36,7 +40,7 @@ export default class TarefaLista extends Component {
     render() {
         return (
             <div
-            className='row mt-4 justify-content-center m-1 p-3'
+            className='mt-4 m-1 p-3'
             style={{backgroundColor: 'beige'}}>
                 {this.state.listaTarefas}
             </div>

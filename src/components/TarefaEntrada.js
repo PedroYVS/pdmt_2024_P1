@@ -3,22 +3,22 @@ import React, { Component } from 'react'
 export default class TarefaEntrada extends Component {
 
     state = {
-        novaTarefa: ''
+        inputTarefa: ''
     }
 
-    alteracaoInput = (event) => {
-        this.setState({novaTarefa: event.target.value})
+    alterarInput = (event) => {
+        this.setState({inputTarefa: event.target.value})
     }
 
-    adicaoNovaTarefa = () => {
+    adicionarNovaTarefa = () => {
         let cont = 0, tudoBranco = false
-        for(let i = 0; i < this.state.novaTarefa.length; i++){
-            if(this.state.novaTarefa[i] === ' ') cont++
+        for(let i = 0; i < this.state.inputTarefa.length; i++){
+            if(this.state.inputTarefa[i] === ' ') cont++
         }
-        if(this.state.novaTarefa.length === cont) tudoBranco = true
-        if(this.state.novaTarefa !== '' && !tudoBranco){
-            this.props.atualizaTarefas(this.state.novaTarefa)
-            this.setState({novaTarefa: ''})
+        if(this.state.inputTarefa.length === cont) tudoBranco = true
+        if(this.state.inputTarefa !== '' && !tudoBranco){
+            this.props.atualizaTarefas(this.state.inputTarefa)
+            this.setState({inputTarefa: ''})
         }
     }
 
@@ -29,16 +29,16 @@ export default class TarefaEntrada extends Component {
                 <div className='col col-12'>
                     <input
                     type='text'
-                    value={this.state.novaTarefa}
+                    value={this.state.inputTarefa}
                     className='w-100 text-center m-1' placeholder={this.props.plholder}
-                    onChange={this.alteracaoInput}
-                    onKeyUp={e => { if(e.key === 'Enter') this.adicaoNovaTarefa() }}/>
+                    onChange={this.alterarInput}
+                    onKeyUp={e => { if(e.key === 'Enter') this.adicionarNovaTarefa() }}/>
                 </div>
                 <div className="col col-12">
                     <button
                     type='button'
                     className='btn btn-primary w-100 m-1'
-                    onClick={this.adicaoNovaTarefa}>
+                    onClick={this.adicionarNovaTarefa}>
                         Ok
                     </button>
                 </div>

@@ -11,8 +11,8 @@ export default class App extends Component {
 
     tarefasAux = []
 
-    atualizaTarefas = (info) => {
-        this.tarefasAux.push(info)
+    atualizaTarefas = (novaTar) => {
+        this.tarefasAux.push(novaTar)
         this.setState({tarefas: this.tarefasAux})
     }
 
